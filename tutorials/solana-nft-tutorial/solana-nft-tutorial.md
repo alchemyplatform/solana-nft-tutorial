@@ -24,18 +24,18 @@ In order to make the process of going through the tutorial easier, I have made a
 ```
 /solana-nft-tutorial
 	/0-assets
-		/head
-			0.png
-			1.png
-			2.png
-		/mouth
-			0.png
-			1.png
-			2.png
-		/eyes
-			0.png
-			1.png
-			2.png
+		/Head
+			HotPink.png
+			Pink.png
+			Yellow.png
+		/Mouth
+			Circular.png
+			Oval.png
+			Wonky.png
+		/Eyes
+			Frown.png
+			Smile.png
+			Shock.png
 	/1-generate
 	/2-build
 	/3-deploy
@@ -133,15 +133,15 @@ You should receive directory structure similar to below with the pre-made layer 
 ```
 /solana-nft-tutorial
 	/0-assets
-		/head
+		/Head
 			HotPink.png
 			Pink.png
 			Yellow.png
-		/mouth
+		/Mouth
 			Circular.png
 			Oval.png
 			Wonky.png
-		/eyes
+		/Eyes
 			Frown.png
 			Smile.png
 			Shock.png
@@ -186,4 +186,65 @@ constants   LICENSE   node_modules  README.md          yarn.lock
 index.js    logo.png  package.json  src
 ```
 
-Change directory into `layers` and remove all the sample files. Copy all of the folders inside `0-assets` into `layers` folder because that's where all of our layers will be placed for art generation.
+Change directory into `layers` and remove all the sample files.
+```sh
+# shell
+cd layers
+rm -r * # delete all in directory 
+```
+
+Copy all of the folders inside `0-assets` in the template into `layers` folder because that's where all of our layers will be placed for art generation using **HashLips**.
+
+After copy and pasting the folders from `0-assets` your `layers` folder should look like the one below.
+```
+/layers
+	/Head
+		HotPink.png
+		Pink.png
+		Yellow.png
+	/Mouth
+		Circular.png
+		Oval.png
+		Wonky.png
+	/Eyes
+		Frown.png
+		Smile.png
+		Shock.png
+```
+
+Now go into the `src` folder and modify `config.js` to your needs. For this tutorial we will keep it simple and only modify the necessary ones below:
+
+- `network` 
+- `namePrefix` and `description`
+- `solanaMetadata`
+- `layerConfigurations`
+
+First things first, modify your `network` from `NETWORK.eth` to `NETWORK.sol`.
+```js
+const network = NETWORK.sol
+```
+
+Change your `namePrefix` to the name of your collection. In this case we're calling it **Patrick Head**. Also change `description` to the description of your NFT collection.
+```js
+const namePrefix = "Patrick Head";
+const description = "My Patrick Heads";
+```
+
+Modify your Solana Token Metadata as needed. If you want to know more about Solana's token metadata standard, you can check the [Metaplex Docs](https://docs.metaplex.com/programs/token-metadata/token-standard).
+
+This is the default Solana metadata in `config.js`.
+```js
+const solanaMetadata = {
+  symbol: "YC",
+  seller_fee_basis_points: 1000, // Define how much % you want from secondary market sales 1000 = 10%
+  external_url: "https://www.youtube.com/c/hashlipsnft",
+  creators: [
+    {
+      address: "7fXNuer5sbZtaTEPhtJ5g5gNtuyRoKkvxdjEjEnPN4mC",
+      share: 100,
+    },
+  ],
+};
+```
+
+Here's a brief overview of the following
