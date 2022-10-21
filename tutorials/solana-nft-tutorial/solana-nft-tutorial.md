@@ -186,4 +186,4 @@ constants   LICENSE   node_modules  README.md          yarn.lock
 index.js    logo.png  package.json  src
 ```
 
-Change directory into `layers` and remove all the sample files
+Change directory into `layers` and remove all the sample files. Copy all of the folders inside `0-assets` into `layers` folder because that's where all of our layers will be placed for art generation.
