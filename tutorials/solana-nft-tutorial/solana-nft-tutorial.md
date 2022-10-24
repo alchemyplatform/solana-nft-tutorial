@@ -228,6 +228,7 @@ Change your `namePrefix` to the name of your collection. In this case we're call
 ```js
 const namePrefix = "Patrick Head";
 const description = "My Patrick Heads";
+// ignore the baseUri variable for now
 ```
 
 Modify your Solana Token Metadata as needed. If you want to know more about Solana's token metadata standard, you can check the [Metaplex Docs](https://docs.metaplex.com/programs/token-metadata/token-standard).
@@ -247,4 +248,69 @@ const solanaMetadata = {
 };
 ```
 
-Here's a brief overview of the following
+Here's a brief overview of the following properties.
+
+- `symbol` is the short representation of the NFT Collection.
+- `seller_fee_basis_points` is the percentage of royalty you want to get from the collection's secondary sales.
+	- 1000 = 10% royalty
+- `external_url` is a URI pointing to an external link defining the asset. (e.g. the project's website)
+- `creators` is an array list of addresses with royalty allocation that determines to whom the creators fees are sent to.
+	- share number must be <= 100
+	- total shares of all creators combined **must be equal to 100**
+
+Let's modify it a bit to fit our collection. Let's make our symbol `PS` and set our creator fees to `1000` basis points (10%). Let's keep the `external_url` to default and **add the creators as needed**.
+
+In this case, since we're just doing a demo, I'll keep the creators as default.
+
+```js
+const solanaMetadata = {
+  symbol: "PS",
+  seller_fee_basis_points: 1000, // Define how much % you want from secondary market sales 1000 = 10%
+  external_url: "https://www.youtube.com/c/hashlipsnft",
+  creators: [
+    {
+      address: "7fXNuer5sbZtaTEPhtJ5g5gNtuyRoKkvxdjEjEnPN4mC",
+      share: 100,
+    },
+  ],
+};
+```
+
+After that, head on over to the `layerConfigurations` variable and copy the one below. The configuration below states the ordering of the asset generation.
+
+The top layer added `{ name: "Head" }` is the first asset to be drawn hence the furthest from the front.
+
+The bottom layer `{ name: "Eyes" }` is the last asset to be drawn hence the nearest to the front.
+
+
+```js
+// If you have selected Solana then the collection starts from 0 automatically
+const layerConfigurations = [
+  {
+    growEditionSizeTo: 27,
+    layersOrder: [
+      { name: "Head" },
+      { name: "Mouth" },
+      { name: "Eyes" },
+    ],
+  },
+];
+```
+
+Now that you're done with the setup, it's time to build. In order to generate your art, use the command below.
+
+```sh
+# shell
+yarn run build # yarn
+npm run build # npm
+```
+
+Upon running your command and waiting for it to finish go in to your `build` folder and there should be a folder for `images` and a folder for `json`.
+
+If all is set  and done you can now start deploying your collection with [Metaplex's tool `Sugar`](https://docs.metaplex.com/developer-tools/sugar/).
+
+# Deploying your Collection
+
+Metaplex has a tool called Sugar
+
+### 
