@@ -324,4 +324,28 @@ Run the command below to fetch and install `Sugar`.
 bash <(curl -sSf https://sugar.metaplex.com/install.sh)
 ```
 
+Confirm that it was installed correctly.
+
+```sh
+# shell
+sugar --version
+```
+
+```sh
+# output
+sugar-cli 1.1.0
+```
+
 ### Usage
+First change directory into `3-build` in the template. This will serve as your workspace for using `sugar` and deploying the collection.
+
+Next create an `assets` directory in the `3-build` folder and copy the images and JSON file from HashLips generation earlier.
+
+```
+
+```
+
+
+##### *insert collection mint instructions here*
+
+### Deployment
