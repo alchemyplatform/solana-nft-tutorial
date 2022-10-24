@@ -311,6 +311,17 @@ If all is set  and done you can now start deploying your collection with [Metapl
 
 # Deploying your Collection
 
-Metaplex has a tool called Sugar
+Metaplex built a has a tool called `Sugar` that's a CLI tool used for managing your deployed `Candy Machine Program`. The `Candy Machine` is used for minting and distribution of Solana NFTs.
 
-### 
+Using `Sugar` will make your deployment and management easier.
+
+### Installation
+
+Run the command below to fetch and install `Sugar`.
+
+```sh
+# shell
+bash <(curl -sSf https://sugar.metaplex.com/install.sh)
+```
+
+### Usage
