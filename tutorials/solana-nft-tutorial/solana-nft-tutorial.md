@@ -468,3 +468,34 @@ sugar show # check details of deployed Candy Machine
 Take note of the **Candy Machine ID**. You'll use it for deploying the frontend.
 
 **Congratulations! You're done!** with deploying your Candy Machine! It's time to use Metaplax's Candy Machine template to mint your NFTs!
+
+# Deploy Minting Website
+
+In this tutorial we will be using Vercel and **Metaplex's Candy Machine UI** in order to create a minting dapp for our newly deployed collection.
+
+First, go to Metaplex's Candy Machine UI repository and fork it.
+
+![Candy Machine UI Repo](./images/candy-machine-ui.png)
+
+After forking it go to [Vercel](https://vercel.com/) login and add new **Project** and **Continue with Github**. Choose your own fork of the **Candy Machine UI**. 
+
+![Vercel Add New](./images/add-new.png)
+
+##### Configure Environment Variables
+
+Check your fork and open `.env.example` use it to configure your Vercel Environment Variables.
+
+> Tip: Don't know where to find the Candy Machine Program ID? Use `sugar show` and copy Candy Machine ID.
+
+![Vercel](./images/vercel.png)
+
+After configuring it's time to deploy and **view your site**!
+
+![Deploying](./images/deploy.png)
+
+
+A webpage should open like the one below. Connect your wallet and try minting one to test your Candy Machine deployment.
+
+![Connect Wallet](./images/connect-wallet.png)
+
+### That's it! You're done! Glad you reached this point now you're ready to conquer the world of Solana NFTs!
