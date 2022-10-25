@@ -336,16 +336,133 @@ sugar --version
 sugar-cli 1.1.0
 ```
 
-### Usage
+### `sugar` Usage
+
+##### Preparing the Assets
 First change directory into `3-build` in the template. This will serve as your workspace for using `sugar` and deploying the collection.
 
-Next create an `assets` directory in the `3-build` folder and copy the images and JSON file from HashLips generation earlier.
+Next create an `assets` directory in the `2-build` folder and copy the images and JSON file from HashLips generation earlier.
+
+After copyiung the files from our `2-build` directory should look similar to the one below.
 
 ```
-
+/solana-nft-tutorial
+	** snipped **
+	/2-build
+		/assets
+			_metadata.json
+			0.png 0.json
+			1.png 1.json
+			2.png 2.json
+			.
+			.
+			.
+			25.png 25.json
+			26.png 26.json
+	/3-deploy
 ```
 
+Notice the `_metadata.json` file? Move it to a different folder to make sure only the images and JSON files are in the asset folder.
 
-##### *insert collection mint instructions here*
+##### Collection Mint
+
+Collection mint is the NFT that serves as the "album cover" of your NFT collection in the marketplace. It can be set any valid NFT, but for this tutorial we'll let sugar **automatically detect the  collection mint.**
+
+In order to set the collection mint automatically go into the `assets` folder and copy `0.png` into `collection.png` and `0.json` into `collection.json`.
+
+After removing `_metadata.json` and adding a collection mint your assets directory should be similar to the one below.
+
+```
+/solana-nft-tutorial
+	** snipped **
+	/2-build
+		/assets
+			collection.png
+			collection.json
+			0.png 0.json
+			1.png 1.json
+			2.png 2.json
+			.
+			.
+			.
+			25.png 25.json
+			26.png 26.json
+	/3-deploy
+```
+
+Now that your assets are ready, it's time to use `sugar` in order to deploy it.
 
 ### Deployment
+
+Before we start make sure you change directory into the `2-build` folder where the `assets` folder is found.
+
+##### Overview
+
+1. `sugar validate` to check if the images and metadata was generated correctly
+2. `sugar create-config` to create a **Candy Machine configuration** interactively
+2. `sugar upload` to upload your images and metadata (JSON) files to the storage of your choice
+3. `sugar launch` to launch your Candy Machine for NFT collection minting
+4. `sugar verify` to verify uploaded data
+5. `sugar show` to show the details of your launched Candy Machine
+
+##### Step-by-Step
+
+In the `2-build` folder where the `assets` folder is found, run the following commands below.
+
+Validate if the generated images and metadata (JSON) are valid and ready to be deployed.
+
+```sh
+# shell
+sugar validate
+```
+
+You must receive the same output below with a command successful event if your images and metadata are ready for upload.
+
+```sh
+# output
+[1/1] 🗂  Loading assets
+▪▪▪▪▪ Validating 28 metadata file(s)...
+
+Validation complete, your metadata file(s) look good.
+
+✅ Command successful.
+```
+
+After validating your generated images and metadata, it's time to interactively create a **Candy Machine** config using `sugar create-config`.
+
+It should walk you through an interactive prompt so feel free to modify it as you wish. After doing that, it's time to upload your collection to storage.
+
+```sh
+# shell
+sugar upload
+```
+
+If the upload is successful, you should get a similar output below.
+
+```sh
+# output
+[00:00:00] Upload successful ██████████████████████████████████████████████████ 28/28
+
+28/28 asset pair(s) uploaded.
+
+✅ Command successful.
+```
+
+Upon the successful completion of the upload it's time to launch your Candy Machine!
+
+```sh
+# shell
+sugar launch
+```
+
+If you got a **Command Succesful** response, you're almost done!
+
+Do a quick `sugar verify` followed by a `sugar show` to check the status of your launched Candy Machine and check for a **Command Successful** response.
+
+```sh
+# shell
+sugar verify
+sugar show # check details of deployed Candy Machine
+```
+
+**You're done**! with deploying your Candy Machine! It's time to use Metaplax's Candy Machine template to mint your NFTs!
