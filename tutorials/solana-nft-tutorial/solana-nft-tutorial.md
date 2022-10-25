@@ -465,4 +465,6 @@ sugar verify
 sugar show # check details of deployed Candy Machine
 ```
 
-**You're done**! with deploying your Candy Machine! It's time to use Metaplax's Candy Machine template to mint your NFTs!
+Take note of the **Candy Machine ID**. You'll use it for deploying the frontend.
+
+**Congratulations! You're done!** with deploying your Candy Machine! It's time to use Metaplax's Candy Machine template to mint your NFTs!
