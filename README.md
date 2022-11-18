@@ -1,8 +1,30 @@
+<!-- TODO add screenshots -->
+<!-- TODO: Walk through create config but don't dwell too much and add reasurring statement that default options is fine -->
+<!-- TODO: use bundlr -->
+<!-- TODO: add the .env details -->
 # Solana NFT Tutorial
 
 If you're not in Solana, it's time for you be in it, because just recently [Solana overtakes Ethereum in Daily NFT trading volume](https://decrypt.co/101342/solana-overtakes-ethereum-daily-nft-trading-trippin-ape-tribe). This means that you can be certain that NFTs are thriving in Solana.
 
 So if you're looking to figure out how to create [NFTs](https://www.alchemy.com/nfts) with Solana, then you came to the right place.
+
+> Note: If you have any errors or questions, check out the FAQ below.
+
+# Prerequisite
+1. [Github Account](https://github.com/)
+2. [Vercel Account](https://vercel.com/)
+3. [Alchemy API Key](https://alchemy.com/?a=solana-nft-tutorial)
+5. [Node](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/)
+
+# What you're building...
+
+<!-- TODO: Add node version -->
+In this tutorial you will be learning all about Solana NFT Collections. You will start from generating your images and metadata with the art generation tool, HashLips. It will then be followed with the Sugar CLI tool allowing you to deploy your Candy Machine program to facilitate your NFT collection on Solana's devnet. Lastly, you will finally deploy your NFT minting application to production with Vercel and manually test its functionality.
+
+<!-- 1. Art and Metadata generation with HashLips -->
+<!-- 2. NFT Collection Deployment with Metaplex Sugar CLI and Candy Machine -->
+<!-- 3. Minting Dapp Deployment with React and Vercel -->
+<!-- 4. Testing -->
 
 # A Guide on CLI Format
 
@@ -18,6 +40,28 @@ echo "this is a cli command"
 this is a cli command
 ```
 
+# Where we'll work
+
+Using the following commands below, change into your home directory and create a new directory. This will serve as your workspace to isolate your files during this tutorial so change your current directory to your newly created folder.
+
+```sh
+# shell
+cd ~
+mkdir alchemy-solana-nft
+cd alchemy-solana-nft
+```
+
+If done right you should get a similar output below.
+```sh
+# shell
+pwd
+```
+
+```sh
+# output
+/home/kristian/alchemy-solana-nft
+```
+
 # Project Template
 
 In order to make the process of going through the tutorial easier, I have made a template with different folders that will serve as your workspaces and you can get it [over here](git@github.com:kquirapas/solana-nft-tutorial.git).
@@ -25,17 +69,17 @@ In order to make the process of going through the tutorial easier, I have made a
 /solana-nft-tutorial
 	/0-assets
 		/Head
-			HotPink.png
-			Pink.png
-			Yellow.png
+			HotPink#1.png
+			Pink#1.png
+			Yellow#1.png
 		/Mouth
-			Circular.png
-			Oval.png
-			Wonky.png
+			Frown#1.png
+			Smile#1.png
+			Shock#1.png
 		/Eyes
-			Frown.png
-			Smile.png
-			Shock.png
+			Circular#1.png
+			Oval#1.png
+			Wonky#1.png
 	/1-generate
 	/2-build
 	/3-deploy
@@ -78,7 +122,7 @@ Solana's tool suite is designed to have [multiple commands](https://docs.solana.
 
 `solana-keygen new` - create a new filesystem keypair.
 
-`solana airdrop` - airdrop some devnet / testnet Solana in a certain address.
+`solana airdrop <amount> <address>` - airdrop some devnet / testnet Solana in a certain address.
 
 #### First Steps
 
@@ -123,10 +167,16 @@ Now you're done getting ready for development!
 # Generating Assets with HashLips
 
 ### Setup
-Now that you're done installing Solana's tool suite, it's time to generate some  assets with **HashLips**. In order to get started get a copy of [our template here](git@github.com:kquirapas/solana-nft-tutorial.git) and clone it locally with the command below.
+Now that you're done installing Solana's tool suite, it's time to generate some  assets with **HashLips**.
+
+HashLips is an art generation tool that can be used to layer images on top of each other depending on your own configuration. It's a tool that's mainly used for generative art collections in Solana.
+
+In order to get started get a copy of [our template here](https://github.com/alchemyplatform/solana-nft-tutorial) and clone it locally with the command below.
+
 ```sh
 # shell
-git clone *insert repository link here*
+# current directory: /home/kristian/alchemy-solana-nft
+git clone https://github.com/alchemyplatform/solana-nft-tutorial
 ```
 
 You should receive directory structure similar to below with the pre-made layer images we will be using for the art generation we will be doing with HashLips.
@@ -134,17 +184,17 @@ You should receive directory structure similar to below with the pre-made layer 
 /solana-nft-tutorial
 	/0-assets
 		/Head
-			HotPink.png
-			Pink.png
-			Yellow.png
+			HotPink#1.png
+			Pink#1.png
+			Yellow#1.png
 		/Mouth
-			Circular.png
-			Oval.png
-			Wonky.png
+			Frown#1.png
+			Smile#1.png
+			Shock#1.png
 		/Eyes
-			Frown.png
-			Smile.png
-			Shock.png
+			Circular#1.png
+			Oval#1.png
+			Wonky#1.png
 	/1-generate
 	/2-build
 	/3-deploy
@@ -153,18 +203,22 @@ You should receive directory structure similar to below with the pre-made layer 
 Change directory into `1-generate` and this will serve as your workspace for generating your art.
 ```sh
 # shell
-cd 1-generate
+# current directory: /home/kristian/alchemy-solana-nft
+cd alchemy-solana-nft/template/1-generate
 ```
 
 Once in `1-generate` let's get a copy of [HashLips and install it locally](https://github.com/HashLips/hashlips_art_engine).
 ```sh
 # shell
+# current directory: /home/kristian/alchemy-solana-nft/template/1-generate
 git clone https://github.com/HashLips/hashlips_art_engine.git
+cd hashlips_art_engine
 ```
 
 Go to the root of the newly cloned repository and install the dependencies.
 ```sh
 # shell
+# current directory: /home/kristian/alchemy-solana-nft/template/1-generate/hashlips_art_engine
 yarn install # yarn
 npm install # npm
 ```
@@ -176,11 +230,14 @@ HashLips is a very powerful art engine that allows you to create different confi
 After doing the steps above you must be left with a similar set of files.
 ```sh
 # shell
+# current directory: /home/kristian/alchemy-solana-nft/template/1-generate/hashlips_art_engine
 ls # list files in current directory
 ```
 
 ```sh
 # output
+# current directory: /home/kristian/alchemy-solana-nft/template/1-generate/hashlips_art_engine
+ls # list files in current directory
 banner.png  layers    modules       package-lock.json  utils
 constants   LICENSE   node_modules  README.md          yarn.lock
 index.js    logo.png  package.json  src
@@ -189,6 +246,8 @@ index.js    logo.png  package.json  src
 Change directory into `layers` and remove all the sample files.
 ```sh
 # shell
+# current directory: /home/kristian/alchemy-solana-nft/template/1-generate/hashlips_art_engine/
+ls # list files in current directory
 cd layers
 rm -r * # delete all in directory 
 ```
@@ -197,19 +256,20 @@ Copy all of the folders inside `0-assets` in the template into `layers` folder b
 
 After copy and pasting the folders from `0-assets` your `layers` folder should look like the one below.
 ```
+# current directory: /home/kristian/alchemy-solana-nft/template/1-generate/hashlips_art_engine/
 /layers
 	/Head
-		HotPink.png
-		Pink.png
-		Yellow.png
+		HotPink#1.png
+		Pink#1.png
+		Yellow#1.png
 	/Mouth
-		Circular.png
-		Oval.png
-		Wonky.png
+		Frown#1.png
+		Smile#1.png
+		Shock#1.png
 	/Eyes
-		Frown.png
-		Smile.png
-		Shock.png
+		Circular#1.png
+		Oval#1.png
+		Wonky#1.png
 ```
 
 Now go into the `src` folder and modify `config.js` to your needs. For this tutorial we will keep it simple and only modify the necessary ones below:
@@ -305,13 +365,13 @@ yarn run build # yarn
 npm run build # npm
 ```
 
-Upon running your command and waiting for it to finish go in to your `build` folder and there should be a folder for `images` and a folder for `json`.
+Upon running your command and waiting for it to finish go in to your `build` folder and there should be a folder for `images` and a folder for `json`. You should expect 27 different PNG files and also 27 different JSON files from your generation.
 
-If all is set  and done you can now start deploying your collection with [Metaplex's tool `Sugar`](https://docs.metaplex.com/developer-tools/sugar/).
+If all is set  and done you can now start deploying your collection with Metaplex's `Sugar` CLI tool.
 
 # Deploying your Collection
 
-Metaplex built a has a tool called `Sugar` that's a CLI tool used for managing your deployed `Candy Machine Program`. The `Candy Machine` is used for minting and distribution of Solana NFTs.
+Metaplex built a has a tool called [Sugar](https://docs.metaplex.com/developer-tools/sugar/) that's a CLI tool used for managing your deployed `Candy Machine Program`. The `Candy Machine` is used for minting and distribution of Solana NFTs.
 
 Using `Sugar` will make your deployment and management easier.
 
@@ -342,8 +402,9 @@ sugar-cli 1.1.0
 First change directory into `3-build` in the template. This will serve as your workspace for using `sugar` and deploying the collection.
 
 Next create an `assets` directory in the `2-build` folder and copy the images and JSON file from HashLips generation earlier.
+<!-- TODO: add exact HASHLIPS folder path -->
 
-After copyiung the files from our `2-build` directory should look similar to the one below.
+After copying the files from our `2-build` directory should look similar to the one below.
 
 ```
 /solana-nft-tutorial
@@ -432,6 +493,8 @@ After validating your generated images and metadata, it's time to interactively 
 
 It should walk you through an interactive prompt so feel free to modify it as you wish. After doing that, it's time to upload your collection to storage.
 
+<!-- TODO: Insert success output after config generation for sanity check -->
+
 ```sh
 # shell
 sugar upload
@@ -473,29 +536,59 @@ Take note of the **Candy Machine ID**. You'll use it for deploying the frontend.
 
 In this tutorial we will be using Vercel and **Metaplex's Candy Machine UI** in order to create a minting dapp for our newly deployed collection.
 
-First, go to Metaplex's Candy Machine UI repository and fork it.
+First, go to Metaplex's [Candy Machine UI](https://github.com/metaplex-foundation/candy-machine-ui) repository and fork it.
 
-![Candy Machine UI Repo](./images/candy-machine-ui.png)
+![Candy Machine UI Repo](.github/images/candy-machine-ui.png)
 
 After forking it go to [Vercel](https://vercel.com/) login and add new **Project** and **Continue with Github**. Choose your own fork of the **Candy Machine UI**. 
 
-![Vercel Add New](./images/add-new.png)
+![Vercel Add New](.github/images/add-new.png)
 
 ##### Configure Environment Variables
 
 Check your fork and open `.env.example` use it to configure your Vercel Environment Variables.
 
+<!-- TODO: ADD COPYABLE .ENV FILE -->
+
 > Tip: Don't know where to find the Candy Machine Program ID? Use `sugar show` and copy Candy Machine ID.
 
-![Vercel](./images/vercel.png)
+![Vercel](.github/images/vercel.png)
 
 After configuring it's time to deploy and **view your site**!
 
-![Deploying](./images/deploy.png)
+![Deploying](.github/images/deploy.png)
 
 
 A webpage should open like the one below. Connect your wallet and try minting one to test your Candy Machine deployment.
 
-![Connect Wallet](./images/connect-wallet.png)
+![Connect Wallet](.github/images/connect-wallet.png)
+
+# Testing
+
+Now it's time to test your newly deployed collection using your Minting DApp on Vercel.
+
+First get your devnet Solana (SOL) using Solana CLI and with your Phantom wallet address.
+
+> You can only request a maximum of 2 SOL at a time.
+
+```sh
+# shell
+solana airdrop 2 **insert wallet address here**
+```
+
+After getting your Devnet SOL, it's time to finally try your Minting Dapp by connecting your wallet and minting your first Devnet NFT!
+<!-- TODO: Add photo here -->
+
+### What else moving forward...
+
+NFTs can have a lot of utilities and a simple collection that you've just deployed is just the start. If you want to know more and find more ways to use Solana NFTs as well as to add utilities to them learn from the following resources below:
+<!-- TODO: Insert resources bullet list -->
+<!-- - art generation tips -->
+<!-- - how to go to mainnet -->
+<!-- - examples of cool NFT projects / functions on solana -->
+<!-- - blog post that people made on giving solana NFTs utility -->
 
 ### That's it! You're done! Glad you reached this point now you're ready to conquer the world of Solana NFTs!
+
+### Frequently Asked Questions (FAQs)
+<!-- TODO: add node version error from notion -->
