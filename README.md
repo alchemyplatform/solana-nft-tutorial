@@ -14,7 +14,7 @@ So if you're looking to figure out how to create [NFTs](https://www.alchemy.com/
 1. [Github Account](https://github.com/)
 2. [Vercel Account](https://vercel.com/)
 3. [Alchemy API Key](https://alchemy.com/?a=solana-nft-tutorial)
-5. [Node](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/)
+5. [Node](https://nodejs.org/en/)(v16.10.0) and [Yarn](https://yarnpkg.com/)
 
 # What you're building...
 
@@ -64,25 +64,27 @@ pwd
 
 # Project Template
 
-In order to make the process of going through the tutorial easier, I have made a template with different folders that will serve as your workspaces and you can get it [over here](git@github.com:kquirapas/solana-nft-tutorial.git).
+In order to make the process of going through the tutorial easier, I have made a template with different folders that will serve as your workspaces and you can get it [over here](https://github.com/alchemyplatform/solana-nft-tutorial).
 ```
 /solana-nft-tutorial
-	/0-assets
-		/Head
-			HotPink#1.png
-			Pink#1.png
-			Yellow#1.png
-		/Mouth
-			Frown#1.png
-			Smile#1.png
-			Shock#1.png
-		/Eyes
-			Circular#1.png
-			Oval#1.png
-			Wonky#1.png
-	/1-generate
-	/2-build
-	/3-deploy
+	README.md
+	/template
+		/0-assets
+			/Head
+				HotPink#1.png
+				Pink#1.png
+				Yellow#1.png
+			/Mouth
+				Frown#1.png
+				Smile#1.png
+				Shock#1.png
+			/Eyes
+				Circular#1.png
+				Oval#1.png
+				Wonky#1.png
+		/1-generate
+		/2-build
+		/3-deploy
 ```
 
 Each folder would correspond to a different workspace for cloning, installing, generating, and deploying.
@@ -182,22 +184,24 @@ git clone https://github.com/alchemyplatform/solana-nft-tutorial
 You should receive directory structure similar to below with the pre-made layer images we will be using for the art generation we will be doing with HashLips.
 ```
 /solana-nft-tutorial
-	/0-assets
-		/Head
-			HotPink#1.png
-			Pink#1.png
-			Yellow#1.png
-		/Mouth
-			Frown#1.png
-			Smile#1.png
-			Shock#1.png
-		/Eyes
-			Circular#1.png
-			Oval#1.png
-			Wonky#1.png
-	/1-generate
-	/2-build
-	/3-deploy
+	README.md
+	/template
+		/0-assets
+			/Head
+				HotPink#1.png
+				Pink#1.png
+				Yellow#1.png
+			/Mouth
+				Frown#1.png
+				Smile#1.png
+				Shock#1.png
+			/Eyes
+				Circular#1.png
+				Oval#1.png
+				Wonky#1.png
+		/1-generate
+		/2-build
+		/3-deploy
 ```
 
 Change directory into `1-generate` and this will serve as your workspace for generating your art.
@@ -366,6 +370,23 @@ npm run build # npm
 ```
 
 Upon running your command and waiting for it to finish go in to your `build` folder and there should be a folder for `images` and a folder for `json`. You should expect 27 different PNG files and also 27 different JSON files from your generation.
+
+```sh
+# current directory: /home/kristian/alchemy-solana-nft/template/1-generate/hashlips_art_engine
+/build
+	/images
+		0.png
+		1.png
+		.
+		.
+		26.png
+	/json
+		0.json
+		1.json
+		.
+		.
+		26.json
+```
 
 If all is set  and done you can now start deploying your collection with Metaplex's `Sugar` CLI tool.
 
