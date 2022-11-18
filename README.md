@@ -4,22 +4,42 @@
 <!-- TODO: add the .env details -->
 # Solana NFT Tutorial
 
-If you're not in Solana, it's time for you be in it, because just recently [Solana overtakes Ethereum in Daily NFT trading volume](https://decrypt.co/101342/solana-overtakes-ethereum-daily-nft-trading-trippin-ape-tribe). This means that you can be certain that NFTs are thriving in Solana.
+Hey there 👋🏼
 
-So if you're looking to figure out how to create [NFTs](https://www.alchemy.com/nfts) with Solana, then you came to the right place.
+If you haven't yet explored the Solana ecosystem, NOW IS THE TIME!
 
-> Note: If you have any errors or questions, check out the FAQ below.
+Just recently [Solana overtook Ethereum in Daily NFT trading volume](https://decrypt.co/101342/solana-overtakes-ethereum-daily-nft-trading-trippin-ape-tribe). This means that you can be sure that NFTs are thriving on Solana.
 
-# Prerequisite
+Now if you're interested in learning how to create [NFTs](https://www.alchemy.com/nfts) with Solana, you're in the right place.
+
+The Alchemy team is super excited to walk you through this tutorial to create your very own NFT collection on Solana.
+
+The original co-authors of this post are Kristian ([]()) and Albert ([@thatguyintech](https://www.twitter.com/thatguyintech)). Go say hi to them if you found this post useful!
+
+And of course, you can ask questions to the Alchemy University education team at any time by any of these methods:
+
+1. Tagging us in a tweet [@AlchemyLearn](https://www.twitter.com/AlchemyLearn)
+2. Chatting in the [Alchemy University Discord](https://university.alchemy.com/discord)
+
+Without further ado, let's get into it!
+
+> Note: If you have any errors or questions, check out the FAQ at the bottom of this page.
+
+# Prerequisites
 1. [Github Account](https://github.com/)
 2. [Vercel Account](https://vercel.com/)
 3. [Alchemy API Key](https://alchemy.com/?a=solana-nft-tutorial)
 5. [Node](https://nodejs.org/en/)(v16.10.0) and [Yarn](https://yarnpkg.com/)
 
 # What you're building...
-
 <!-- TODO: Add node version -->
 In this tutorial you will be learning all about Solana NFT Collections. You will start from generating your images and metadata with the art generation tool, HashLips. It will then be followed with the Sugar CLI tool allowing you to deploy your Candy Machine program to facilitate your NFT collection on Solana's devnet. Lastly, you will finally deploy your NFT minting application to production with Vercel and manually test its functionality.
+
+Here's what your frontend DApp will look like:
+![Your DApp Website](https://raw.githubusercontent.com/alchemyplatform/solana-nft-tutorial/master/.github/images/dapp-website.png)
+
+When you're done, you'll be able to mint your NFTs using any Solana wallet (i.e. Phantom) on the devnet via Alchemy's Solana RPC.
+![Example Minted NFT](https://raw.githubusercontent.com/alchemyplatform/solana-nft-tutorial/master/.github/images/example-minted-nft-in-wallet.png)
 
 <!-- 1. Art and Metadata generation with HashLips -->
 <!-- 2. NFT Collection Deployment with Metaplex Sugar CLI and Candy Machine -->
@@ -559,11 +579,11 @@ In this tutorial we will be using Vercel and **Metaplex's Candy Machine UI** in 
 
 First, go to Metaplex's [Candy Machine UI](https://github.com/metaplex-foundation/candy-machine-ui) repository and fork it.
 
-![Candy Machine UI Repo](.github/images/candy-machine-ui.png)
+![Candy Machine UI Repo](https://raw.githubusercontent.com/alchemyplatform/solana-nft-tutorial/master/.github/images/candy-machine-ui.png)
 
 After forking it go to [Vercel](https://vercel.com/) login and add new **Project** and **Continue with Github**. Choose your own fork of the **Candy Machine UI**. 
 
-![Vercel Add New](.github/images/add-new.png)
+![Vercel Add New](https://raw.githubusercontent.com/alchemyplatform/solana-nft-tutorial/master/.github/images/add-new.png)
 
 ##### Configure Environment Variables
 
@@ -573,16 +593,16 @@ Check your fork and open `.env.example` use it to configure your Vercel Environm
 
 > Tip: Don't know where to find the Candy Machine Program ID? Use `sugar show` and copy Candy Machine ID.
 
-![Vercel](.github/images/vercel.png)
+![Vercel](https://raw.githubusercontent.com/alchemyplatform/solana-nft-tutorial/master/.github/images/vercel.png)
 
 After configuring it's time to deploy and **view your site**!
 
-![Deploying](.github/images/deploy.png)
+![Deploying](https://raw.githubusercontent.com/alchemyplatform/solana-nft-tutorial/master/.github/images/deploy.png)
 
 
 A webpage should open like the one below. Connect your wallet and try minting one to test your Candy Machine deployment.
 
-![Connect Wallet](.github/images/connect-wallet.png)
+![Connect Wallet](https://raw.githubusercontent.com/alchemyplatform/solana-nft-tutorial/master/.github/images/connect-wallet.png)
 
 # Testing
 
