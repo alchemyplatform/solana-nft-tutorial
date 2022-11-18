@@ -3,11 +3,6 @@
 <!-- TODO: use bundlr -->
 <!-- TODO: add the .env details -->
 
----
-title: "How to Build a Solana NFT Collection"
-excerpt: "Learn the fastest way to mint a collection of Solana NFTs using Alchemy, Metaplex, Bundlr, Arweave, and Hashlips."
----
-
 # Solana NFT Tutorial
 
 If you're not in Solana, it's time for you be in it, because just recently [Solana overtakes Ethereum in Daily NFT trading volume](https://decrypt.co/101342/solana-overtakes-ethereum-daily-nft-trading-trippin-ape-tribe). This means that you can be certain that NFTs are thriving in Solana.
