@@ -587,11 +587,24 @@ After forking it go to [Vercel](https://vercel.com/) login and add new **Project
 
 ![Vercel Add New](https://raw.githubusercontent.com/alchemyplatform/solana-nft-tutorial/master/.github/images/add-new.png)
 
+##### Get your Solana RPC URL
+
+<!-- TODO: Get Alchemy SOLANA RPC URL -->
+
 ##### Configure Environment Variables
 
 Check your fork and open `.env.example` use it to configure your Vercel Environment Variables.
 
 <!-- TODO: ADD COPYABLE .ENV FILE -->
+You can copy the contents below.
+
+```sh
+REACT_APP_CANDY_MACHINE_ID=<YOUR CANDY MACHINE PROGRAM ID>
+
+REACT_APP_SOLANA_NETWORK=devnet
+REACT_APP_SOLANA_RPC_HOST=https://solana-devnet.g.alchemy.com/v2/<your-api-key>
+SKIP_PREFLIGHT_CHECK=true
+```
 
 > Tip: Don't know where to find the Candy Machine Program ID? Use `sugar show` and copy Candy Machine ID.
 
@@ -600,7 +613,6 @@ Check your fork and open `.env.example` use it to configure your Vercel Environm
 After configuring it's time to deploy and **view your site**!
 
 ![Deploying](https://raw.githubusercontent.com/alchemyplatform/solana-nft-tutorial/master/.github/images/deploy.png)
-
 
 A webpage should open like the one below. Connect your wallet and try minting one to test your Candy Machine deployment.
 
