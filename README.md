@@ -17,9 +17,14 @@ So if you're looking to figure out how to create [NFTs](https://www.alchemy.com/
 5. [Node](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/)
 
 # What you're building...
-
 <!-- TODO: Add node version -->
 In this tutorial you will be learning all about Solana NFT Collections. You will start from generating your images and metadata with the art generation tool, HashLips. It will then be followed with the Sugar CLI tool allowing you to deploy your Candy Machine program to facilitate your NFT collection on Solana's devnet. Lastly, you will finally deploy your NFT minting application to production with Vercel and manually test its functionality.
+
+Here's what your frontend DApp will look like:
+![Your DApp Website](.github/images/dapp-website.png)
+
+When you're done, you'll be able to mint your NFTs using any Solana wallet (i.e. Phantom) on the devnet via Alchemy's Solana RPC.
+![Example Minted NFT](.github/images/example-minted-nft-in-wallet.png)
 
 <!-- 1. Art and Metadata generation with HashLips -->
 <!-- 2. NFT Collection Deployment with Metaplex Sugar CLI and Candy Machine -->
