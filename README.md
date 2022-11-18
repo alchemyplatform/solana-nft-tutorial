@@ -14,7 +14,7 @@ Now if you're interested in learning how to create [NFTs](https://www.alchemy.co
 
 The Alchemy team is super excited to walk you through this tutorial to create your very own NFT collection on Solana.
 
-The original co-authors of this post are Kristian ([]()) and Albert ([@thatguyintech](https://www.twitter.com/thatguyintech)). Go say hi to them if you found this post useful!
+The original co-authors of this post are Kristian ([@k_quirapas](https://twitter.com/k_quirapas)) and Albert ([@thatguyintech](https://www.twitter.com/thatguyintech)). Go say hi to them if you found this post useful!
 
 And of course, you can ask questions to the Alchemy University education team at any time by any of these methods:
 
@@ -29,10 +29,9 @@ Without further ado, let's get into it!
 1. [Github Account](https://github.com/)
 2. [Vercel Account](https://vercel.com/)
 3. [Alchemy API Key](https://alchemy.com/?a=solana-nft-tutorial)
-5. [Node](https://nodejs.org/en/)(v16.10.0) and [Yarn](https://yarnpkg.com/)
+5. [Node](https://nodejs.org/en/)(v14.19.0) and [Yarn](https://yarnpkg.com/)
 
 # What you're building...
-<!-- TODO: Add node version -->
 In this tutorial you will be learning all about Solana NFT Collections. You will start from generating your images and metadata with the art generation tool, HashLips. It will then be followed with the Sugar CLI tool allowing you to deploy your Candy Machine program to facilitate your NFT collection on Solana's devnet. Lastly, you will finally deploy your NFT minting application to production with Vercel and manually test its functionality.
 
 Here's what your frontend DApp will look like:
@@ -401,6 +400,7 @@ Upon running your command and waiting for it to finish go in to your `build` fol
 		.
 		26.png
 	/json
+		_metadata.json
 		0.json
 		1.json
 		.
@@ -440,10 +440,9 @@ sugar-cli 1.1.0
 ### `sugar` Usage
 
 ##### Preparing the Assets
-First change directory into `3-build` in the template. This will serve as your workspace for using `sugar` and deploying the collection.
+First change directory into `2-build` in the template. This will serve as your workspace for using `sugar` and deploying the collection.
 
 Next create an `assets` directory in the `2-build` folder and copy the images and JSON file from HashLips generation earlier.
-<!-- TODO: add exact HASHLIPS folder path -->
 
 After copying the files from our `2-build` directory should look similar to the one below.
 
@@ -534,7 +533,10 @@ After validating your generated images and metadata, it's time to interactively 
 
 It should walk you through an interactive prompt so feel free to modify it as you wish. After doing that, it's time to upload your collection to storage.
 
-<!-- TODO: Insert success output after config generation for sanity check -->
+You should get a similar output below on success.
+
+![Output after generation](https://raw.githubusercontent.com/alchemyplatform/solana-nft-tutorial/master/.github/images/generate.png)
+
 
 ```sh
 # shell
@@ -623,11 +625,10 @@ After getting your Devnet SOL, it's time to finally try your Minting Dapp by con
 ### What else moving forward...
 
 NFTs can have a lot of utilities and a simple collection that you've just deployed is just the start. If you want to know more and find more ways to use Solana NFTs as well as to add utilities to them learn from the following resources below:
-<!-- TODO: Insert resources bullet list -->
-<!-- - art generation tips -->
-<!-- - how to go to mainnet -->
-<!-- - examples of cool NFT projects / functions on solana -->
-<!-- - blog post that people made on giving solana NFTs utility -->
+
+- [Generative Art Tips and Tricks](https://www.youtube.com/watch?v=HGx052UU8A0&t=19s)
+- [Top 10 Solana NFT Collections: List of the Most Ambitious Projects, Ranking, Trading Volume](https://mpost.io/top-10-solana-nft-collections-list-of-the-most-ambitious-projects-ranking-trading-volume/)
+- [DeGods: The Recent Solana NFT Project Ascending in Rankings](https://learn.bybit.com/nft/what-are-degods-nfts/)
 
 ### That's it! You're done! Glad you reached this point now you're ready to conquer the world of Solana NFTs!
 
