@@ -535,7 +535,7 @@ It should walk you through an interactive prompt so feel free to modify it as yo
 
 You should get a similar output below on success.
 
-![Output after generation](https://raw.githubusercontent.com/alchemyplatform/solana-nft-tutorial/master/.github/images/generate.png)
+![Output after generation](https://raw.githubusercontent.com/alchemyplatform/solana-nft-tutorial/master/.github/images/generation.png)
 
 
 ```sh
