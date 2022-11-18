@@ -4,13 +4,28 @@
 <!-- TODO: add the .env details -->
 # Solana NFT Tutorial
 
-If you're not in Solana, it's time for you be in it, because just recently [Solana overtakes Ethereum in Daily NFT trading volume](https://decrypt.co/101342/solana-overtakes-ethereum-daily-nft-trading-trippin-ape-tribe). This means that you can be certain that NFTs are thriving in Solana.
+Hey there 👋🏼
 
-So if you're looking to figure out how to create [NFTs](https://www.alchemy.com/nfts) with Solana, then you came to the right place.
+If you haven't yet explored the Solana ecosystem, NOW IS THE TIME!
 
-> Note: If you have any errors or questions, check out the FAQ below.
+Just recently [Solana overtook Ethereum in Daily NFT trading volume](https://decrypt.co/101342/solana-overtakes-ethereum-daily-nft-trading-trippin-ape-tribe). This means that you can be sure that NFTs are thriving on Solana.
 
-# Prerequisite
+Now if you're interested in learning how to create [NFTs](https://www.alchemy.com/nfts) with Solana, you're in the right place.
+
+The Alchemy team is super excited to walk you through this tutorial to create your very own NFT collection on Solana.
+
+The original co-authors of this post are Kristian ([]()) and Albert ([@thatguyintech](https://www.twitter.com/thatguyintech)). Go say hi to them if you found this post useful!
+
+And of course, you can ask questions to the Alchemy University education team at any time by any of these methods:
+
+1. Tagging us in a tweet [@AlchemyLearn](https://www.twitter.com/AlchemyLearn)
+2. Chatting in the [Alchemy University Discord](https://university.alchemy.com/discord)
+
+Without further ado, let's get into it!
+
+> Note: If you have any errors or questions, check out the FAQ at the bottom of this page.
+
+# Prerequisites
 1. [Github Account](https://github.com/)
 2. [Vercel Account](https://vercel.com/)
 3. [Alchemy API Key](https://alchemy.com/?a=solana-nft-tutorial)
