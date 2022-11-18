@@ -388,7 +388,11 @@ yarn run build # yarn
 npm run build # npm
 ```
 
-Upon running your command and waiting for it to finish go in to your `build` folder and there should be a folder for `images` and a folder for `json`. You should expect 27 different PNG files and also 27 different JSON files from your generation.
+You should get a similar output below on success.
+
+![Output after generation](https://raw.githubusercontent.com/alchemyplatform/solana-nft-tutorial/master/.github/images/generation.png)
+
+Upon running your command go to your `build` folder and there should be a folder for `images` and a folder for `json`. You should expect 27 different PNG files and also 27 different JSON files from your generation.
 
 ```sh
 # current directory: /home/kristian/alchemy-solana-nft/template/1-generate/hashlips_art_engine
@@ -532,10 +536,6 @@ Validation complete, your metadata file(s) look good.
 After validating your generated images and metadata, it's time to interactively create a **Candy Machine** config using `sugar create-config`.
 
 It should walk you through an interactive prompt so feel free to modify it as you wish. After doing that, it's time to upload your collection to storage.
-
-You should get a similar output below on success.
-
-![Output after generation](https://raw.githubusercontent.com/alchemyplatform/solana-nft-tutorial/master/.github/images/generation.png)
 
 
 ```sh
