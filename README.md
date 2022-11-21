@@ -501,7 +501,9 @@ After removing `_metadata.json` and adding a collection mint your assets directo
 	/3-deploy
 ```
 
-Now that your assets are ready, it's time to use `sugar` in order to deploy it.
+Now that your assets are ready and combined in your `assets` folder as seen below, it's time to use `sugar` in order to deploy it.
+
+> Note: Noticed the `collection.json` and `collection.png`?
 
 ![Assets Folder Overview](https://raw.githubusercontent.com/alchemyplatform/solana-nft-tutorial/master/.github/images/assets.png)
 
