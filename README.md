@@ -386,11 +386,19 @@ npm run build # npm
 
 You should get a similar output below on success.
 
-> Important Note: It's 26 because the count starts from 0 with Solana
+> Important Note: It's 26 (despite being 27 in total) because the count starts from 0 with Solana.
 
 ![Output after generation](https://raw.githubusercontent.com/alchemyplatform/solana-nft-tutorial/master/.github/images/generation.png)
 
-Upon running your command go to your `build` folder and there should be a folder for `images` and a folder for `json`. You should expect 27 different PNG files and also 27 different JSON files from your generation.
+Upon running your command go to your `build` folder and there should be a folder for `images` and a folder for `json`.
+
+![Build Folder](https://raw.githubusercontent.com/alchemyplatform/solana-nft-tutorial/master/.github/images/build.png)
+
+You should expect 27 different PNG files, also 27 different JSON files from your generation with one `_metadata.json`.
+
+Ignore `_metadata.json` for now.
+
+![Build Folder Contents](https://raw.githubusercontent.com/alchemyplatform/solana-nft-tutorial/master/.github/images/build-result.png)
 
 ```sh
 # current directory: /home/kristian/alchemy-solana-nft/template/1-generate/hashlips_art_engine
@@ -495,6 +503,8 @@ After removing `_metadata.json` and adding a collection mint your assets directo
 
 Now that your assets are ready, it's time to use `sugar` in order to deploy it.
 
+![Assets Folder Overview](https://raw.githubusercontent.com/alchemyplatform/solana-nft-tutorial/master/.github/images/assets.png)
+
 ### Deployment
 
 Before we start make sure you change directory into the `2-build` folder where the `assets` folder is found.
@@ -562,7 +572,7 @@ You will then be prompted for the following:
 5. `Go live date` - date from when the collection becomes available for minting. You can use the keyword `now` to signify that it's ready for minting upon launch.
 6. `Number of creator wallets` - how many wallets would receive the royalties from secondary sales
 7. `Wallet address for each creator` - addresses of the wallets that will receive the royalties
-8. `Royaly percentage for each creator` - the percentage of the total royalty for each sale each creator should get. All of the percentages from each wallet combined should total to `100`
+8. `Royalty percentage for each creator` - the percentage of the total royalty for each sale each creator should get. All of the percentages from each wallet combined should total to `100`
 9. `Extra Features` - additional features to be toggled for your Candy Machine. This will be discussed further in the section below
 
 In order to keep this simple for this tutorial we won't specify the other prompts and we recommend you follow the same responses below (colored in green).
