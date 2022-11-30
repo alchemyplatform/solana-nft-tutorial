@@ -162,19 +162,21 @@ Keypair Path: /home/kirby/.config/solana/id.json
 Commitment: confirmed
 ```
 
-Notice that the configuration above is in `mainnet-beta`. In order for us to do some testing, we must change this to `devnet`.
+Notice that the configuration above is in `mainnet-beta`. In order for us to do some testing, we must change this to a devnet URL. We'll be using a dedicated devnet RPC from [Alchemy](https://www.alchemy.com/?a=solana-nft-tutorial). If you don't already have an account, click on [this link](https://www.alchemy.com/?a=solana-nft-tutorial) and sign up to create an API key.
+
+Make sure to create a solana-devnet application and generate an HTTPS url that looks like this: `https://solana-devnet.g.alchemy.com/v2/<your-api-key>`. We'll use that in the config setting below:
 
 ```sh
 # shell
-solana config set --url devnet
+solana config set --url https://solana-devnet.g.alchemy.com/v2/<your-api-key>
 ```
 
 You should get a similar output below.
 ```sh
 # output
 Config File: /home/kirby/.config/solana/cli/config.yml
-RPC URL: https://api.devnet.solana.com
-WebSocket URL: wss://api.devnet.solana.com/ (computed)
+RPC URL: https://solana-devnet.g.alchemy.com/v2/<your-api-key>
+WebSocket URL: wss://solana-devnet.g.alchemy.com/v2/<your-api-key> (computed)
 Keypair Path: /home/kirby/.config/solana/id.json
 Commitment: confirmed
 ```
